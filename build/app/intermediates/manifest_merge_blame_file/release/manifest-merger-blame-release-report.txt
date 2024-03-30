@@ -1,0 +1,305 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.testapp1"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="19"
+8-->/Users/elvaroot/Downloads/RiytouAppProject-main/android/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="33" />
+9-->/Users/elvaroot/Downloads/RiytouAppProject-main/android/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->/Users/elvaroot/Downloads/RiytouAppProject-main/android/app/src/main/AndroidManifest.xml:2:5-66
+11-->/Users/elvaroot/Downloads/RiytouAppProject-main/android/app/src/main/AndroidManifest.xml:2:22-64
+12    <!--
+13         Required to query activities that can process text, see: https://developer.android.com/training/package-visibility?hl=en and
+14         https://developer.android.com/reference/android/content/Intent#ACTION_PROCESS_TEXT.
+15
+16         In particular, this is used by the Flutter engine in io.flutter.plugin.text.ProcessTextPlugin.
+17    -->
+18    <queries>
+18-->/Users/elvaroot/Downloads/RiytouAppProject-main/android/app/src/main/AndroidManifest.xml:23:5-33:15
+19        <intent>
+19-->/Users/elvaroot/Downloads/RiytouAppProject-main/android/app/src/main/AndroidManifest.xml:24:9-27:18
+20            <action android:name="android.intent.action.PROCESS_TEXT" />
+20-->/Users/elvaroot/Downloads/RiytouAppProject-main/android/app/src/main/AndroidManifest.xml:25:13-72
+20-->/Users/elvaroot/Downloads/RiytouAppProject-main/android/app/src/main/AndroidManifest.xml:25:21-70
+21
+22            <data android:mimeType="text/plain" />
+22-->/Users/elvaroot/Downloads/RiytouAppProject-main/android/app/src/main/AndroidManifest.xml:26:13-50
+22-->/Users/elvaroot/Downloads/RiytouAppProject-main/android/app/src/main/AndroidManifest.xml:26:19-48
+23        </intent>
+24        <intent>
+24-->/Users/elvaroot/Downloads/RiytouAppProject-main/android/app/src/main/AndroidManifest.xml:28:9-32:18
+25            <action android:name="android.intent.action.VIEW" />
+25-->/Users/elvaroot/Downloads/RiytouAppProject-main/android/app/src/main/AndroidManifest.xml:29:13-65
+25-->/Users/elvaroot/Downloads/RiytouAppProject-main/android/app/src/main/AndroidManifest.xml:29:21-62
+26
+27            <category android:name="android.intent.category.BROWSABLE" />
+27-->/Users/elvaroot/Downloads/RiytouAppProject-main/android/app/src/main/AndroidManifest.xml:30:13-74
+27-->/Users/elvaroot/Downloads/RiytouAppProject-main/android/app/src/main/AndroidManifest.xml:30:23-71
+28
+29            <data android:scheme="https" />
+29-->/Users/elvaroot/Downloads/RiytouAppProject-main/android/app/src/main/AndroidManifest.xml:26:13-50
+29-->/Users/elvaroot/Downloads/RiytouAppProject-main/android/app/src/main/AndroidManifest.xml:31:19-41
+30        </intent>
+31    </queries>
+32
+33    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+33-->[com.google.firebase:firebase-auth:22.3.1] /Users/elvaroot/.gradle/caches/transforms-3/a6bd6391ef21328897caf6e03a97abbd/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:26:5-79
+33-->[com.google.firebase:firebase-auth:22.3.1] /Users/elvaroot/.gradle/caches/transforms-3/a6bd6391ef21328897caf6e03a97abbd/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:26:22-76
+34    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+34-->[com.google.android.recaptcha:recaptcha:18.4.0] /Users/elvaroot/.gradle/caches/transforms-3/e692383bc856ae0bb0d1d640054d2ace/transformed/jetified-recaptcha-18.4.0/AndroidManifest.xml:9:5-98
+34-->[com.google.android.recaptcha:recaptcha:18.4.0] /Users/elvaroot/.gradle/caches/transforms-3/e692383bc856ae0bb0d1d640054d2ace/transformed/jetified-recaptcha-18.4.0/AndroidManifest.xml:9:22-95
+35
+36    <permission
+36-->[androidx.core:core:1.10.1] /Users/elvaroot/.gradle/caches/transforms-3/0b9c903fef8d2eb2a269c36999ef4a74/transformed/core-1.10.1/AndroidManifest.xml:22:5-24:47
+37        android:name="com.example.testapp1.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+37-->[androidx.core:core:1.10.1] /Users/elvaroot/.gradle/caches/transforms-3/0b9c903fef8d2eb2a269c36999ef4a74/transformed/core-1.10.1/AndroidManifest.xml:23:9-81
+38        android:protectionLevel="signature" />
+38-->[androidx.core:core:1.10.1] /Users/elvaroot/.gradle/caches/transforms-3/0b9c903fef8d2eb2a269c36999ef4a74/transformed/core-1.10.1/AndroidManifest.xml:24:9-44
+39
+40    <uses-permission android:name="com.example.testapp1.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+40-->[androidx.core:core:1.10.1] /Users/elvaroot/.gradle/caches/transforms-3/0b9c903fef8d2eb2a269c36999ef4a74/transformed/core-1.10.1/AndroidManifest.xml:26:5-97
+40-->[androidx.core:core:1.10.1] /Users/elvaroot/.gradle/caches/transforms-3/0b9c903fef8d2eb2a269c36999ef4a74/transformed/core-1.10.1/AndroidManifest.xml:26:22-94
+41
+42    <application
+43        android:name="android.app.Application"
+43-->/Users/elvaroot/Downloads/RiytouAppProject-main/android/app/src/main/AndroidManifest.xml:3:43-76
+44        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+44-->[androidx.core:core:1.10.1] /Users/elvaroot/.gradle/caches/transforms-3/0b9c903fef8d2eb2a269c36999ef4a74/transformed/core-1.10.1/AndroidManifest.xml:28:18-86
+45        android:icon="@mipmap/ic_launcher"
+45-->/Users/elvaroot/Downloads/RiytouAppProject-main/android/app/src/main/AndroidManifest.xml:3:77-111
+46        android:label="testapp1" >
+46-->/Users/elvaroot/Downloads/RiytouAppProject-main/android/app/src/main/AndroidManifest.xml:3:18-42
+47        <activity
+47-->/Users/elvaroot/Downloads/RiytouAppProject-main/android/app/src/main/AndroidManifest.xml:4:9-14:20
+48            android:name="com.example.testapp1.MainActivity"
+48-->/Users/elvaroot/Downloads/RiytouAppProject-main/android/app/src/main/AndroidManifest.xml:4:19-47
+49            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+49-->/Users/elvaroot/Downloads/RiytouAppProject-main/android/app/src/main/AndroidManifest.xml:4:138-288
+50            android:exported="true"
+50-->/Users/elvaroot/Downloads/RiytouAppProject-main/android/app/src/main/AndroidManifest.xml:4:48-71
+51            android:hardwareAccelerated="true"
+51-->/Users/elvaroot/Downloads/RiytouAppProject-main/android/app/src/main/AndroidManifest.xml:4:289-323
+52            android:launchMode="singleTop"
+52-->/Users/elvaroot/Downloads/RiytouAppProject-main/android/app/src/main/AndroidManifest.xml:4:72-102
+53            android:theme="@style/LaunchTheme"
+53-->/Users/elvaroot/Downloads/RiytouAppProject-main/android/app/src/main/AndroidManifest.xml:4:103-137
+54            android:windowSoftInputMode="adjustResize" >
+54-->/Users/elvaroot/Downloads/RiytouAppProject-main/android/app/src/main/AndroidManifest.xml:4:324-366
+55
+56            <!--
+57                 Specifies an Android theme to apply to this Activity as soon as
+58                 the Android process has started. This theme is visible to the user
+59                 while the Flutter UI initializes. After that, this theme continues
+60                 to determine the Window background behind the Flutter UI.
+61            -->
+62            <meta-data
+62-->/Users/elvaroot/Downloads/RiytouAppProject-main/android/app/src/main/AndroidManifest.xml:9:13-120
+63                android:name="io.flutter.embedding.android.NormalTheme"
+63-->/Users/elvaroot/Downloads/RiytouAppProject-main/android/app/src/main/AndroidManifest.xml:9:24-79
+64                android:resource="@style/NormalTheme" />
+64-->/Users/elvaroot/Downloads/RiytouAppProject-main/android/app/src/main/AndroidManifest.xml:9:80-117
+65
+66            <intent-filter>
+66-->/Users/elvaroot/Downloads/RiytouAppProject-main/android/app/src/main/AndroidManifest.xml:10:13-13:29
+67                <action android:name="android.intent.action.MAIN" />
+67-->/Users/elvaroot/Downloads/RiytouAppProject-main/android/app/src/main/AndroidManifest.xml:11:17-68
+67-->/Users/elvaroot/Downloads/RiytouAppProject-main/android/app/src/main/AndroidManifest.xml:11:25-66
+68
+69                <category android:name="android.intent.category.LAUNCHER" />
+69-->/Users/elvaroot/Downloads/RiytouAppProject-main/android/app/src/main/AndroidManifest.xml:12:17-76
+69-->/Users/elvaroot/Downloads/RiytouAppProject-main/android/app/src/main/AndroidManifest.xml:12:27-74
+70            </intent-filter>
+71        </activity>
+72        <!--
+73             Don't delete the meta-data below.
+74             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+75        -->
+76        <meta-data
+76-->/Users/elvaroot/Downloads/RiytouAppProject-main/android/app/src/main/AndroidManifest.xml:17:9-72
+77            android:name="flutterEmbedding"
+77-->/Users/elvaroot/Downloads/RiytouAppProject-main/android/app/src/main/AndroidManifest.xml:17:20-51
+78            android:value="2" />
+78-->/Users/elvaroot/Downloads/RiytouAppProject-main/android/app/src/main/AndroidManifest.xml:17:52-69
+79
+80        <service
+80-->[:firebase_auth] /Users/elvaroot/Downloads/RiytouAppProject-main/build/firebase_auth/intermediates/merged_manifest/release/AndroidManifest.xml:10:9-14:19
+81            android:name="com.google.firebase.components.ComponentDiscoveryService"
+81-->[:firebase_auth] /Users/elvaroot/Downloads/RiytouAppProject-main/build/firebase_auth/intermediates/merged_manifest/release/AndroidManifest.xml:10:18-89
+82            android:directBootAware="true"
+82-->[com.google.firebase:firebase-common:20.4.2] /Users/elvaroot/.gradle/caches/transforms-3/89c6fd71728d0adae7dd67686aa1cdf7/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:32:13-43
+83            android:exported="false" >
+83-->[com.google.firebase:firebase-auth:22.3.1] /Users/elvaroot/.gradle/caches/transforms-3/a6bd6391ef21328897caf6e03a97abbd/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:68:13-37
+84            <meta-data
+84-->[:firebase_auth] /Users/elvaroot/Downloads/RiytouAppProject-main/build/firebase_auth/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-13:85
+85                android:name="com.google.firebase.components:io.flutter.plugins.firebase.auth.FlutterFirebaseAuthRegistrar"
+85-->[:firebase_auth] /Users/elvaroot/Downloads/RiytouAppProject-main/build/firebase_auth/intermediates/merged_manifest/release/AndroidManifest.xml:12:17-124
+86                android:value="com.google.firebase.components.ComponentRegistrar" />
+86-->[:firebase_auth] /Users/elvaroot/Downloads/RiytouAppProject-main/build/firebase_auth/intermediates/merged_manifest/release/AndroidManifest.xml:13:17-82
+87            <meta-data
+87-->[:cloud_firestore] /Users/elvaroot/Downloads/RiytouAppProject-main/build/cloud_firestore/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-13:85
+88                android:name="com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar"
+88-->[:cloud_firestore] /Users/elvaroot/Downloads/RiytouAppProject-main/build/cloud_firestore/intermediates/merged_manifest/release/AndroidManifest.xml:12:17-134
+89                android:value="com.google.firebase.components.ComponentRegistrar" />
+89-->[:cloud_firestore] /Users/elvaroot/Downloads/RiytouAppProject-main/build/cloud_firestore/intermediates/merged_manifest/release/AndroidManifest.xml:13:17-82
+90            <meta-data
+90-->[:firebase_core] /Users/elvaroot/Downloads/RiytouAppProject-main/build/firebase_core/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-13:85
+91                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
+91-->[:firebase_core] /Users/elvaroot/Downloads/RiytouAppProject-main/build/firebase_core/intermediates/merged_manifest/release/AndroidManifest.xml:12:17-124
+92                android:value="com.google.firebase.components.ComponentRegistrar" />
+92-->[:firebase_core] /Users/elvaroot/Downloads/RiytouAppProject-main/build/firebase_core/intermediates/merged_manifest/release/AndroidManifest.xml:13:17-82
+93            <meta-data
+93-->[com.google.firebase:firebase-auth:22.3.1] /Users/elvaroot/.gradle/caches/transforms-3/a6bd6391ef21328897caf6e03a97abbd/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:69:13-71:85
+94                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+94-->[com.google.firebase:firebase-auth:22.3.1] /Users/elvaroot/.gradle/caches/transforms-3/a6bd6391ef21328897caf6e03a97abbd/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:70:17-109
+95                android:value="com.google.firebase.components.ComponentRegistrar" />
+95-->[com.google.firebase:firebase-auth:22.3.1] /Users/elvaroot/.gradle/caches/transforms-3/a6bd6391ef21328897caf6e03a97abbd/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:71:17-82
+96            <meta-data
+96-->[com.google.firebase:firebase-firestore:24.10.1] /Users/elvaroot/.gradle/caches/transforms-3/d5995256df091ccdde210a73f3d319dd/transformed/jetified-firebase-firestore-24.10.1/AndroidManifest.xml:17:13-19:85
+97                android:name="com.google.firebase.components:com.google.firebase.firestore.FirebaseFirestoreKtxRegistrar"
+97-->[com.google.firebase:firebase-firestore:24.10.1] /Users/elvaroot/.gradle/caches/transforms-3/d5995256df091ccdde210a73f3d319dd/transformed/jetified-firebase-firestore-24.10.1/AndroidManifest.xml:18:17-122
+98                android:value="com.google.firebase.components.ComponentRegistrar" />
+98-->[com.google.firebase:firebase-firestore:24.10.1] /Users/elvaroot/.gradle/caches/transforms-3/d5995256df091ccdde210a73f3d319dd/transformed/jetified-firebase-firestore-24.10.1/AndroidManifest.xml:19:17-82
+99            <meta-data
+99-->[com.google.firebase:firebase-firestore:24.10.1] /Users/elvaroot/.gradle/caches/transforms-3/d5995256df091ccdde210a73f3d319dd/transformed/jetified-firebase-firestore-24.10.1/AndroidManifest.xml:20:13-22:85
+100                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+100-->[com.google.firebase:firebase-firestore:24.10.1] /Users/elvaroot/.gradle/caches/transforms-3/d5995256df091ccdde210a73f3d319dd/transformed/jetified-firebase-firestore-24.10.1/AndroidManifest.xml:21:17-111
+101                android:value="com.google.firebase.components.ComponentRegistrar" />
+101-->[com.google.firebase:firebase-firestore:24.10.1] /Users/elvaroot/.gradle/caches/transforms-3/d5995256df091ccdde210a73f3d319dd/transformed/jetified-firebase-firestore-24.10.1/AndroidManifest.xml:22:17-82
+102            <meta-data
+102-->[com.google.firebase:firebase-common-ktx:20.4.2] /Users/elvaroot/.gradle/caches/transforms-3/3e0bc4977c88ea836df12b1c7ea3d9c2/transformed/jetified-firebase-common-ktx-20.4.2/AndroidManifest.xml:12:13-14:85
+103                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
+103-->[com.google.firebase:firebase-common-ktx:20.4.2] /Users/elvaroot/.gradle/caches/transforms-3/3e0bc4977c88ea836df12b1c7ea3d9c2/transformed/jetified-firebase-common-ktx-20.4.2/AndroidManifest.xml:13:17-116
+104                android:value="com.google.firebase.components.ComponentRegistrar" />
+104-->[com.google.firebase:firebase-common-ktx:20.4.2] /Users/elvaroot/.gradle/caches/transforms-3/3e0bc4977c88ea836df12b1c7ea3d9c2/transformed/jetified-firebase-common-ktx-20.4.2/AndroidManifest.xml:14:17-82
+105            <meta-data
+105-->[com.google.firebase:firebase-common:20.4.2] /Users/elvaroot/.gradle/caches/transforms-3/89c6fd71728d0adae7dd67686aa1cdf7/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:35:13-37:85
+106                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
+106-->[com.google.firebase:firebase-common:20.4.2] /Users/elvaroot/.gradle/caches/transforms-3/89c6fd71728d0adae7dd67686aa1cdf7/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:36:17-109
+107                android:value="com.google.firebase.components.ComponentRegistrar" />
+107-->[com.google.firebase:firebase-common:20.4.2] /Users/elvaroot/.gradle/caches/transforms-3/89c6fd71728d0adae7dd67686aa1cdf7/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:37:17-82
+108        </service>
+109
+110        <activity
+110-->[:url_launcher_android] /Users/elvaroot/Downloads/RiytouAppProject-main/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:10:9-13:74
+111            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+111-->[:url_launcher_android] /Users/elvaroot/Downloads/RiytouAppProject-main/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-74
+112            android:exported="false"
+112-->[:url_launcher_android] /Users/elvaroot/Downloads/RiytouAppProject-main/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:12:13-37
+113            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+113-->[:url_launcher_android] /Users/elvaroot/Downloads/RiytouAppProject-main/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:13:13-71
+114        <activity
+114-->[com.google.firebase:firebase-auth:22.3.1] /Users/elvaroot/.gradle/caches/transforms-3/a6bd6391ef21328897caf6e03a97abbd/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:29:9-46:20
+115            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+115-->[com.google.firebase:firebase-auth:22.3.1] /Users/elvaroot/.gradle/caches/transforms-3/a6bd6391ef21328897caf6e03a97abbd/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:30:13-80
+116            android:excludeFromRecents="true"
+116-->[com.google.firebase:firebase-auth:22.3.1] /Users/elvaroot/.gradle/caches/transforms-3/a6bd6391ef21328897caf6e03a97abbd/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:31:13-46
+117            android:exported="true"
+117-->[com.google.firebase:firebase-auth:22.3.1] /Users/elvaroot/.gradle/caches/transforms-3/a6bd6391ef21328897caf6e03a97abbd/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:32:13-36
+118            android:launchMode="singleTask"
+118-->[com.google.firebase:firebase-auth:22.3.1] /Users/elvaroot/.gradle/caches/transforms-3/a6bd6391ef21328897caf6e03a97abbd/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:33:13-44
+119            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+119-->[com.google.firebase:firebase-auth:22.3.1] /Users/elvaroot/.gradle/caches/transforms-3/a6bd6391ef21328897caf6e03a97abbd/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:34:13-72
+120            <intent-filter>
+120-->[com.google.firebase:firebase-auth:22.3.1] /Users/elvaroot/.gradle/caches/transforms-3/a6bd6391ef21328897caf6e03a97abbd/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:35:13-45:29
+121                <action android:name="android.intent.action.VIEW" />
+121-->/Users/elvaroot/Downloads/RiytouAppProject-main/android/app/src/main/AndroidManifest.xml:29:13-65
+121-->/Users/elvaroot/Downloads/RiytouAppProject-main/android/app/src/main/AndroidManifest.xml:29:21-62
+122
+123                <category android:name="android.intent.category.DEFAULT" />
+123-->[com.google.firebase:firebase-auth:22.3.1] /Users/elvaroot/.gradle/caches/transforms-3/a6bd6391ef21328897caf6e03a97abbd/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:38:17-76
+123-->[com.google.firebase:firebase-auth:22.3.1] /Users/elvaroot/.gradle/caches/transforms-3/a6bd6391ef21328897caf6e03a97abbd/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:38:27-73
+124                <category android:name="android.intent.category.BROWSABLE" />
+124-->/Users/elvaroot/Downloads/RiytouAppProject-main/android/app/src/main/AndroidManifest.xml:30:13-74
+124-->/Users/elvaroot/Downloads/RiytouAppProject-main/android/app/src/main/AndroidManifest.xml:30:23-71
+125
+126                <data
+126-->/Users/elvaroot/Downloads/RiytouAppProject-main/android/app/src/main/AndroidManifest.xml:26:13-50
+127                    android:host="firebase.auth"
+128                    android:path="/"
+129                    android:scheme="genericidp" />
+129-->/Users/elvaroot/Downloads/RiytouAppProject-main/android/app/src/main/AndroidManifest.xml:31:19-41
+130            </intent-filter>
+131        </activity>
+132        <activity
+132-->[com.google.firebase:firebase-auth:22.3.1] /Users/elvaroot/.gradle/caches/transforms-3/a6bd6391ef21328897caf6e03a97abbd/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:47:9-64:20
+133            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+133-->[com.google.firebase:firebase-auth:22.3.1] /Users/elvaroot/.gradle/caches/transforms-3/a6bd6391ef21328897caf6e03a97abbd/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:48:13-79
+134            android:excludeFromRecents="true"
+134-->[com.google.firebase:firebase-auth:22.3.1] /Users/elvaroot/.gradle/caches/transforms-3/a6bd6391ef21328897caf6e03a97abbd/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:49:13-46
+135            android:exported="true"
+135-->[com.google.firebase:firebase-auth:22.3.1] /Users/elvaroot/.gradle/caches/transforms-3/a6bd6391ef21328897caf6e03a97abbd/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:50:13-36
+136            android:launchMode="singleTask"
+136-->[com.google.firebase:firebase-auth:22.3.1] /Users/elvaroot/.gradle/caches/transforms-3/a6bd6391ef21328897caf6e03a97abbd/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:51:13-44
+137            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+137-->[com.google.firebase:firebase-auth:22.3.1] /Users/elvaroot/.gradle/caches/transforms-3/a6bd6391ef21328897caf6e03a97abbd/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:52:13-72
+138            <intent-filter>
+138-->[com.google.firebase:firebase-auth:22.3.1] /Users/elvaroot/.gradle/caches/transforms-3/a6bd6391ef21328897caf6e03a97abbd/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:53:13-63:29
+139                <action android:name="android.intent.action.VIEW" />
+139-->/Users/elvaroot/Downloads/RiytouAppProject-main/android/app/src/main/AndroidManifest.xml:29:13-65
+139-->/Users/elvaroot/Downloads/RiytouAppProject-main/android/app/src/main/AndroidManifest.xml:29:21-62
+140
+141                <category android:name="android.intent.category.DEFAULT" />
+141-->[com.google.firebase:firebase-auth:22.3.1] /Users/elvaroot/.gradle/caches/transforms-3/a6bd6391ef21328897caf6e03a97abbd/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:38:17-76
+141-->[com.google.firebase:firebase-auth:22.3.1] /Users/elvaroot/.gradle/caches/transforms-3/a6bd6391ef21328897caf6e03a97abbd/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:38:27-73
+142                <category android:name="android.intent.category.BROWSABLE" />
+142-->/Users/elvaroot/Downloads/RiytouAppProject-main/android/app/src/main/AndroidManifest.xml:30:13-74
+142-->/Users/elvaroot/Downloads/RiytouAppProject-main/android/app/src/main/AndroidManifest.xml:30:23-71
+143
+144                <data
+144-->/Users/elvaroot/Downloads/RiytouAppProject-main/android/app/src/main/AndroidManifest.xml:26:13-50
+145                    android:host="firebase.auth"
+146                    android:path="/"
+147                    android:scheme="recaptcha" />
+147-->/Users/elvaroot/Downloads/RiytouAppProject-main/android/app/src/main/AndroidManifest.xml:31:19-41
+148            </intent-filter>
+149        </activity>
+150
+151        <provider
+151-->[com.google.firebase:firebase-common:20.4.2] /Users/elvaroot/.gradle/caches/transforms-3/89c6fd71728d0adae7dd67686aa1cdf7/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:23:9-28:39
+152            android:name="com.google.firebase.provider.FirebaseInitProvider"
+152-->[com.google.firebase:firebase-common:20.4.2] /Users/elvaroot/.gradle/caches/transforms-3/89c6fd71728d0adae7dd67686aa1cdf7/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:24:13-77
+153            android:authorities="com.example.testapp1.firebaseinitprovider"
+153-->[com.google.firebase:firebase-common:20.4.2] /Users/elvaroot/.gradle/caches/transforms-3/89c6fd71728d0adae7dd67686aa1cdf7/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:25:13-72
+154            android:directBootAware="true"
+154-->[com.google.firebase:firebase-common:20.4.2] /Users/elvaroot/.gradle/caches/transforms-3/89c6fd71728d0adae7dd67686aa1cdf7/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:26:13-43
+155            android:exported="false"
+155-->[com.google.firebase:firebase-common:20.4.2] /Users/elvaroot/.gradle/caches/transforms-3/89c6fd71728d0adae7dd67686aa1cdf7/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:27:13-37
+156            android:initOrder="100" />
+156-->[com.google.firebase:firebase-common:20.4.2] /Users/elvaroot/.gradle/caches/transforms-3/89c6fd71728d0adae7dd67686aa1cdf7/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:28:13-36
+157
+158        <uses-library
+158-->[androidx.window:window:1.0.0-beta04] /Users/elvaroot/.gradle/caches/transforms-3/032f4dff274e516110d9363a9793a3e3/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
+159            android:name="androidx.window.extensions"
+159-->[androidx.window:window:1.0.0-beta04] /Users/elvaroot/.gradle/caches/transforms-3/032f4dff274e516110d9363a9793a3e3/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
+160            android:required="false" />
+160-->[androidx.window:window:1.0.0-beta04] /Users/elvaroot/.gradle/caches/transforms-3/032f4dff274e516110d9363a9793a3e3/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
+161        <uses-library
+161-->[androidx.window:window:1.0.0-beta04] /Users/elvaroot/.gradle/caches/transforms-3/032f4dff274e516110d9363a9793a3e3/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
+162            android:name="androidx.window.sidecar"
+162-->[androidx.window:window:1.0.0-beta04] /Users/elvaroot/.gradle/caches/transforms-3/032f4dff274e516110d9363a9793a3e3/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
+163            android:required="false" />
+163-->[androidx.window:window:1.0.0-beta04] /Users/elvaroot/.gradle/caches/transforms-3/032f4dff274e516110d9363a9793a3e3/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
+164
+165        <activity
+165-->[com.google.android.gms:play-services-base:18.0.1] /Users/elvaroot/.gradle/caches/transforms-3/456feef7530341a2c919967cc4dde951/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
+166            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+166-->[com.google.android.gms:play-services-base:18.0.1] /Users/elvaroot/.gradle/caches/transforms-3/456feef7530341a2c919967cc4dde951/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
+167            android:exported="false"
+167-->[com.google.android.gms:play-services-base:18.0.1] /Users/elvaroot/.gradle/caches/transforms-3/456feef7530341a2c919967cc4dde951/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
+168            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+168-->[com.google.android.gms:play-services-base:18.0.1] /Users/elvaroot/.gradle/caches/transforms-3/456feef7530341a2c919967cc4dde951/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
+169
+170        <meta-data
+170-->[com.google.android.gms:play-services-basement:18.1.0] /Users/elvaroot/.gradle/caches/transforms-3/95e76454cff392b3dff66e1259c7e57f/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:21:9-23:69
+171            android:name="com.google.android.gms.version"
+171-->[com.google.android.gms:play-services-basement:18.1.0] /Users/elvaroot/.gradle/caches/transforms-3/95e76454cff392b3dff66e1259c7e57f/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:22:13-58
+172            android:value="@integer/google_play_services_version" />
+172-->[com.google.android.gms:play-services-basement:18.1.0] /Users/elvaroot/.gradle/caches/transforms-3/95e76454cff392b3dff66e1259c7e57f/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:23:13-66
+173    </application>
+174
+175</manifest>

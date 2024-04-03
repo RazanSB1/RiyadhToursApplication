@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:testapp1/mainpagesAR/support_ar.dart';
 
 import '../mainpagesEN/explore.dart';
 import '../mainpagesEN/home_page.dart';
@@ -71,12 +72,20 @@ class _EssentialsPageARState extends State<EssentialsPageAR> {
           ),
           iconTheme: const IconThemeData(color: Colors.amber),
           centerTitle: true,
-          leading: const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 25),
-            child: Icon(
-              Icons.support_agent_rounded,
-              size: 35,
-              color: Colors.amber,
+          leading: GestureDetector(
+            onTap: () {
+              Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SupportAR()));
+            },
+            child: const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 25),
+              child: Icon(
+                Icons.support_agent_rounded,
+                size: 35,
+                color: Colors.amber,
+              ),
             ),
           ),
           actions: [

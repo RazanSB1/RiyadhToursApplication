@@ -1,5 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:quantity_input/quantity_input.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 import 'planlist.dart';
 
@@ -12,6 +14,8 @@ class CreatePlanPage extends StatefulWidget {
 
 class _CreatePlanPageState extends State<CreatePlanPage> {
   int simpleIntInput = 1;
+  final String? userId = FirebaseAuth.instance.currentUser?.uid;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -126,6 +130,115 @@ class _CreatePlanPageState extends State<CreatePlanPage> {
                         fontWeight: FontWeight.w500),
                   )),
                 ),
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              const Text(
+                "Your saved plans",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w900,
+                  color: Color.fromRGBO(40, 87, 69, 1),
+                ),
+              ),
+              SizedBox(height: 10),
+              StreamBuilder<QuerySnapshot>(
+                stream: FirebaseFirestore.instance
+                    .collection('plans')
+                    .where('userId', isEqualTo: userId)
+                    .snapshots(),
+                builder: (context, snapshot) {
+                  if (snapshot.hasError) {
+                    return Text('حدث خطأ في جلب البيانات');
+                  }
+                  if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {
+                    return Center(child: Text('لا توجد خطط محفوظة إلى الآن'));
+                  }
+                  final documents = snapshot.data!.docs;
+                  return Container(
+                    height: 300,
+                    child: ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: documents.length,
+                      itemBuilder: (context, index) {
+                        Map<String, dynamic>? data =
+                            documents[index].data() as Map<String, dynamic>?;
+                        String planName = data?['nameplan'] ?? 'Unnamed Plan';
+                        String day = data?['day'] ?? '0';
+                        return GestureDetector(
+                          onTap: () {
+                            switch (day) {
+                              case '1':
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => PlanList1()));
+                                break;
+                              case '2':
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => PlanList2()));
+                                break;
+                              case '3':
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => PlanList3()));
+                                break;
+                              case '4':
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => PlanList4()));
+                                break;
+                              case '5':
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => PlanList5()));
+                                break;
+                              case '6':
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => PlanList6()));
+                                break;
+                              case '7':
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => PlanList7()));
+                                break;
+                              default:
+                                break;
+                            }
+                          },
+                          child: Container(
+                            margin: EdgeInsets.all(8),
+                            width: 300,
+                            height: 70,
+                            decoration: BoxDecoration(
+                                border: Border.all(color: Colors.black),
+                                borderRadius: BorderRadius.circular(15)),
+                            child: ListTile(
+                              title: Center(
+                                child: Text(
+                                  '$planName - Day: $day',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 20,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                  );
+                },
               ),
             ],
           ),

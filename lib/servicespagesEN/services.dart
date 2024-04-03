@@ -367,6 +367,23 @@ class _EmergencyContactsState extends State<EmergencyContacts> {
   ];
 
   final List _emNum = ["911", "997", "930", "920000560"];
+
+
+
+  Future<void> _makePhoneCall(String phoneNumber) async {
+    final Uri launchUri = Uri(
+      scheme: 'tel',
+      path: phoneNumber,
+    );
+    if (await canLaunchUrl(launchUri)) {
+      await launchUrl(launchUri);
+    } else {
+      throw 'Could not launch $launchUri';
+    }
+  }
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -399,45 +416,48 @@ class _EmergencyContactsState extends State<EmergencyContacts> {
       body: ListView.builder(
           itemCount: _emName.length,
           itemBuilder: (context, index) {
-            return Container(
-              margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-              width: 320,
-              height: 100,
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  boxShadow: const [
-                    BoxShadow(
-                        color: Colors.black26,
-                        offset: Offset(3, 3),
-                        spreadRadius: 2,
-                        blurRadius: 2)
+            return GestureDetector(
+              onTap: () => _makePhoneCall(_emNum[index]),
+              child: Container(
+                margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                width: 320,
+                height: 100,
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    boxShadow: const [
+                      BoxShadow(
+                          color: Colors.black26,
+                          offset: Offset(3, 3),
+                          spreadRadius: 2,
+                          blurRadius: 2)
+                    ],
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(
+                        color: const Color.fromRGBO(40, 87, 69, 1), width: 2)),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(15),
+                      child: Text(
+                        _emName[index],
+                        style: const TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(15),
+                      child: Text(
+                        _emNum[index],
+                        style: const TextStyle(
+                            fontSize: 22,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.blue,
+                            decoration: TextDecoration.underline),
+                      ),
+                    )
                   ],
-                  borderRadius: BorderRadius.circular(20),
-                  border: Border.all(
-                      color: const Color.fromRGBO(40, 87, 69, 1), width: 2)),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(15),
-                    child: Text(
-                      _emName[index],
-                      style: const TextStyle(
-                          fontSize: 18, fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(15),
-                    child: Text(
-                      _emNum[index],
-                      style: const TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.blue,
-                          decoration: TextDecoration.underline),
-                    ),
-                  )
-                ],
+                ),
               ),
             );
           }),
@@ -1327,14 +1347,14 @@ class LaundryListAR extends StatefulWidget {
 }
 
 class _LaundryListARState extends State<LaundryListAR> {
-  final List _laundry = [
-    "غسيلي",
-    "غسيل اكسبرس",
-    "فقاعة غسيل",
-    "مغسلة الجبر",
-    "مغسلة ببلز",
-    "مغسلة لوتس",
+  final List<Map<String, String>> _laundry = [
+    {"name": "غسيلي", "link": "https://apps.apple.com/sa/app/%D8%B4%D8%B1%D9%83%D8%A9-%D8%BA%D8%B3%D9%8A%D9%84%D9%8A/id1644682418"},
+    {"name": "غسيل اكسبرس", "link": "https://apps.apple.com/sa/app/gaseelexpress-%D8%BA%D8%B3%D9%8A%D9%84-%D8%A7%D9%83%D8%B3%D8%A8%D8%B1%D8%B3/id1560146195"},
+    {"name": "فقاعة غسيل", "link": "https://apps.apple.com/sa/app/%D9%81%D9%82%D8%A7%D8%B9%D8%A9-%D8%BA%D8%B3%D9%8A%D9%84-%D8%B7%D9%84%D8%A8%D8%A7%D8%AA-%D8%A7%D9%88%D9%86-%D9%84%D8%A7%D9%8A%D9%86/id1406871224"},
+    {"name": "مغسلة الجبر", "link": "https://apps.apple.com/sa/app/aljabr-laundry/id1581997861"},
+    {"name": "مغسلة ببلز", "link": "https://apps.apple.com/sa/app/bubbles-laundry-%D9%85%D8%BA%D8%A7%D8%B3%D9%84-%D8%A8%D8%A8%D9%84%D8%B2/id1570661021"},
   ];
+
 
   final List _logo = [
     'https://play-lh.googleusercontent.com/eAt6_-7o0W_QLiOTwBvKn3VYU9QOfKLAj8y2DQ_kHFYThVw97sgk-l2rjlmcXQ1cBic',
@@ -1342,7 +1362,6 @@ class _LaundryListARState extends State<LaundryListAR> {
     'https://is3-ssl.mzstatic.com/image/thumb/Purple115/v4/3b/88/a0/3b88a0d8-4817-81df-010e-536a0171353c/AppIcon-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-7.png/512x512bb.jpg',
     'https://pbs.twimg.com/profile_images/1527235986433908736/3PG3j9oC_400x400.jpg',
     'https://play-lh.googleusercontent.com/pp94A2oR4gLiEb1YF3Nkwkdc-YAcubBrQSvh0Q16ZyVxS3EYtutBGaW9Pl1xv0xyGis',
-    'https://play-lh.googleusercontent.com/NOCaj6_L_BjJTEHJxPeiD3aiLZazEi_k5bbV0ifFAHRj1EB7QXskB9W5RYz7aTVF3SY',
   ];
 
   @override
@@ -1379,10 +1398,11 @@ class _LaundryListARState extends State<LaundryListAR> {
       body: ListView.builder(
           itemCount: _laundry.length,
           itemBuilder: (context, index) {
+            final laundry = _laundry[index];
             return ServicesItemAR(
-              name: _laundry[index],
+              name: laundry["name"]!,
               link: _logo[index],
-              link2: '',
+              link2: laundry["link"]!,
             );
           }),
     );
@@ -1405,6 +1425,21 @@ class _EmergencyContactARState extends State<EmergencyContactAR> {
   ];
 
   final List _emNum = ["911", "997", "930", "920000560"];
+
+
+
+  Future<void> _makePhoneCall(String phoneNumber) async {
+    final Uri launchUri = Uri(
+      scheme: 'tel',
+      path: phoneNumber,
+    );
+    if (await canLaunchUrl(launchUri)) {
+      await launchUrl(launchUri);
+    } else {
+      throw 'Could not launch $launchUri';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -1439,45 +1474,48 @@ class _EmergencyContactARState extends State<EmergencyContactAR> {
       body: ListView.builder(
           itemCount: _emName.length,
           itemBuilder: (context, index) {
-            return Container(
-              margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-              width: 320,
-              height: 100,
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  boxShadow: const [
-                    BoxShadow(
-                        color: Colors.black26,
-                        offset: Offset(3, 3),
-                        spreadRadius: 2,
-                        blurRadius: 2)
+            return GestureDetector(
+              onTap: () => _makePhoneCall(_emNum[index]),
+              child: Container(
+                margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                width: 320,
+                height: 100,
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    boxShadow: const [
+                      BoxShadow(
+                          color: Colors.black26,
+                          offset: Offset(3, 3),
+                          spreadRadius: 2,
+                          blurRadius: 2)
+                    ],
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(
+                        color: const Color.fromRGBO(40, 87, 69, 1), width: 2)),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(15),
+                      child: Text(
+                        _emNum[index],
+                        style: const TextStyle(
+                            fontSize: 22,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.blue,
+                            decoration: TextDecoration.underline),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(15),
+                      child: Text(
+                        _emName[index],
+                        style: const TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold),
+                      ),
+                    ),
                   ],
-                  borderRadius: BorderRadius.circular(20),
-                  border: Border.all(
-                      color: const Color.fromRGBO(40, 87, 69, 1), width: 2)),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(15),
-                    child: Text(
-                      _emNum[index],
-                      style: const TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.blue,
-                          decoration: TextDecoration.underline),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(15),
-                    child: Text(
-                      _emName[index],
-                      style: const TextStyle(
-                          fontSize: 18, fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                ],
+                ),
               ),
             );
           }),

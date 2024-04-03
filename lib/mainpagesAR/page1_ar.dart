@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:testapp1/landingpage.dart';
+import 'package:testapp1/mainpagesAR/signup_page_ar.dart';
 
 import 'login_page_ar.dart';
 
@@ -62,6 +63,7 @@ class _Page1ARState extends State<Page1AR> {
                     'images/gplogo.jpg',
                     height: 250,
                   ),
+                  const SizedBox(height: 30,),
                   const Text(
                     'مرحباً',
                     style: TextStyle(
@@ -76,7 +78,7 @@ class _Page1ARState extends State<Page1AR> {
                         ]),
                   ),
                   const SizedBox(
-                    height: 2,
+                    height: 15,
                   ),
                   GestureDetector(
                     onTap: () {
@@ -112,7 +114,13 @@ class _Page1ARState extends State<Page1AR> {
                     ),
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const SignUpPageAR()),
+                      );
+                    },
                     child: Padding(
                       padding: const EdgeInsets.symmetric(
                           horizontal: 40, vertical: 10),
@@ -133,36 +141,6 @@ class _Page1ARState extends State<Page1AR> {
                           style: TextStyle(
                               fontSize: 28,
                               color: Colors.white,
-                              fontWeight: FontWeight.w500),
-                        )),
-                      ),
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {},
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 40, vertical: 10),
-                      child: Container(
-                        padding: const EdgeInsets.all(6),
-                        decoration: BoxDecoration(
-                            border: Border.all(
-                                color: const Color.fromRGBO(253, 198, 81, 1),
-                                width: 3),
-                            color: const Color.fromRGBO(250, 250, 250, 1),
-                            borderRadius: BorderRadius.circular(30),
-                            boxShadow: const [
-                              BoxShadow(
-                                  color: Colors.black26,
-                                  offset: Offset(0, 2),
-                                  blurRadius: 8)
-                            ]),
-                        child: const Center(
-                            child: Text(
-                          'المتابعة كضيف',
-                          style: TextStyle(
-                              fontSize: 24,
-                              color: Color.fromRGBO(253, 198, 81, 1),
                               fontWeight: FontWeight.w500),
                         )),
                       ),

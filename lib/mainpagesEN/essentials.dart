@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:testapp1/mainpagesAR/support_ar.dart';
 
 import '../servicespagesEN/services.dart';
 
@@ -65,12 +66,20 @@ class _EssentialsPageState extends State<EssentialsPage> {
           ),
           iconTheme: const IconThemeData(color: Colors.amber),
           centerTitle: true,
-          leading: const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 25),
-            child: Icon(
-              Icons.support_agent_rounded,
-              size: 35,
-              color: Colors.amber,
+          leading: GestureDetector(
+            onTap: () {
+              Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SupportEN()));
+            },
+            child: const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 25),
+              child: Icon(
+                Icons.support_agent_rounded,
+                size: 35,
+                color: Colors.amber,
+              ),
             ),
           ),
         ),

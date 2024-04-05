@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ActivityPage extends StatelessWidget {
   final String image;
@@ -156,14 +157,23 @@ class ActivityPage extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 18),
-              child: Text(
-                link,
-                style: const TextStyle(
-                  fontSize: 16,
-                  color: Colors.blue, // Assuming this is a link
-                  decoration: TextDecoration.underline,
+              child: GestureDetector(
+                onTap: () async {
+                  if (await canLaunch(link)) {
+                    await launch(link);
+                  } else {
+                    throw 'Could not launch $link';
+                  }
+                },
+                child: Text(
+                  link,
+                  style: const TextStyle(
+                    fontSize: 16,
+                    color: Colors.blue, // Assuming this is a link
+                    decoration: TextDecoration.underline,
+                  ),
+                  textAlign: TextAlign.left,
                 ),
-                textAlign: TextAlign.left,
               ),
             ),
             const Padding(
@@ -179,14 +189,23 @@ class ActivityPage extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 18),
-              child: Text(
-                location,
-                style: const TextStyle(
-                  fontSize: 16,
-                  color: Colors.blue, // Assuming this is a link
-                  decoration: TextDecoration.underline,
+              child: GestureDetector(
+                onTap: () async {
+                  if (await canLaunch(location)) {
+                    await launch(location);
+                  } else {
+                    throw 'Could not launch $location';
+                  }
+                },
+                child: Text(
+                  location,
+                  style: const TextStyle(
+                    fontSize: 16,
+                    color: Colors.blue, // Assuming this is a link
+                    decoration: TextDecoration.underline,
+                  ),
+                  textAlign: TextAlign.left,
                 ),
-                textAlign: TextAlign.left,
               ),
             ),
             const SizedBox(
@@ -357,14 +376,23 @@ class ActivityPageAR extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 18),
-              child: Text(
-                link,
-                style: const TextStyle(
-                  fontSize: 16,
-                  color: Colors.blue, // Assuming this is a link
-                  decoration: TextDecoration.underline,
+              child: GestureDetector(
+                onTap: () async {
+                  if (await canLaunch(link)) {
+                    await launch(link);
+                  } else {
+                    throw 'Could not launch $link';
+                  }
+                },
+                child: Text(
+                  link,
+                  style: const TextStyle(
+                    fontSize: 16,
+                    color: Colors.blue, // Assuming this is a link
+                    decoration: TextDecoration.underline,
+                  ),
+                  textAlign: TextAlign.right,
                 ),
-                textAlign: TextAlign.right,
               ),
             ),
             const Padding(
@@ -380,20 +408,28 @@ class ActivityPageAR extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 18),
-              child: Text(
-                location,
-                style: const TextStyle(
-                  fontSize: 16,
-                  color: Colors.blue, // Assuming this is a link
-                  decoration: TextDecoration.underline,
+              child: GestureDetector(
+                onTap: () async {
+                  if (await canLaunch(location)) {
+                    await launch(location);
+                  } else {
+                    throw 'Could not launch $location';
+                  }
+                },
+                child: Text(
+                  location,
+                  style: const TextStyle(
+                    fontSize: 16,
+                    color: Colors.blue, // Assuming this is a link
+                    decoration: TextDecoration.underline,
+                  ),
+                  textAlign: TextAlign.right,
                 ),
-                textAlign: TextAlign.right,
               ),
             ),
             const SizedBox(
               height: 50,
             ),
-
           ],
         ),
       ),
@@ -535,14 +571,23 @@ class RestaurantPage extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 18),
-              child: Text(
-                link,
-                style: const TextStyle(
-                  fontSize: 16,
-                  color: Colors.blue, // Assuming this is a link
-                  decoration: TextDecoration.underline,
+              child: GestureDetector(
+                onTap: () async {
+                  if (await canLaunch(link)) {
+                    await launch(link);
+                  } else {
+                    throw 'Could not launch $link';
+                  }
+                },
+                child: Text(
+                  link,
+                  style: const TextStyle(
+                    fontSize: 16,
+                    color: Colors.blue, // Assuming this is a link
+                    decoration: TextDecoration.underline,
+                  ),
+                  textAlign: TextAlign.left,
                 ),
-                textAlign: TextAlign.left,
               ),
             ),
             const Padding(
@@ -558,14 +603,23 @@ class RestaurantPage extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 18),
-              child: Text(
-                location,
-                style: const TextStyle(
-                  fontSize: 16,
-                  color: Colors.blue, // Assuming this is a link
-                  decoration: TextDecoration.underline,
+              child: GestureDetector(
+                onTap: () async {
+                  if (await canLaunch(location)) {
+                    await launch(location);
+                  } else {
+                    throw 'Could not launch $location';
+                  }
+                },
+                child: Text(
+                  location,
+                  style: const TextStyle(
+                    fontSize: 16,
+                    color: Colors.blue, // Assuming this is a link
+                    decoration: TextDecoration.underline,
+                  ),
+                  textAlign: TextAlign.left,
                 ),
-                textAlign: TextAlign.left,
               ),
             ),
             const SizedBox(
@@ -588,16 +642,17 @@ class RestaurantPageAR extends StatelessWidget {
   final String location;
   final Function(String) onChoiceSelected;
 
-  const RestaurantPageAR(
-      {super.key,
-      required this.image,
-      required this.name,
-      required this.description,
-      required this.wh,
-      required this.number,
-      required this.link,
-      required this.location,
-      required this.onChoiceSelected,});
+  const RestaurantPageAR({
+    super.key,
+    required this.image,
+    required this.name,
+    required this.description,
+    required this.wh,
+    required this.number,
+    required this.link,
+    required this.location,
+    required this.onChoiceSelected,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -716,14 +771,23 @@ class RestaurantPageAR extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 18),
-              child: Text(
-                link,
-                style: const TextStyle(
-                  fontSize: 16,
-                  color: Colors.blue, // Assuming this is a link
-                  decoration: TextDecoration.underline,
+              child: GestureDetector(
+                onTap: () async {
+                  if (await canLaunch(link)) {
+                    await launch(link);
+                  } else {
+                    throw 'Could not launch $link';
+                  }
+                },
+                child: Text(
+                  link, // استبدل بالنص الذي تريده
+                  style: const TextStyle(
+                    fontSize: 16,
+                    color: Colors.blue, // Assuming this is a link
+                    decoration: TextDecoration.underline,
+                  ),
+                  textAlign: TextAlign.right,
                 ),
-                textAlign: TextAlign.right,
               ),
             ),
             const Padding(
@@ -739,14 +803,23 @@ class RestaurantPageAR extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 18),
-              child: Text(
-                location,
-                style: const TextStyle(
-                  fontSize: 16,
-                  color: Colors.blue, // Assuming this is a link
-                  decoration: TextDecoration.underline,
+              child: GestureDetector(
+                onTap: () async {
+                  if (await canLaunch(location)) {
+                    await launch(location);
+                  } else {
+                    throw 'Could not launch $location';
+                  }
+                },
+                child: Text(
+                  location,
+                  style: const TextStyle(
+                    fontSize: 16,
+                    color: Colors.blue, // Assuming this is a link
+                    decoration: TextDecoration.underline,
+                  ),
+                  textAlign: TextAlign.right,
                 ),
-                textAlign: TextAlign.right,
               ),
             ),
             const SizedBox(
@@ -754,13 +827,6 @@ class RestaurantPageAR extends StatelessWidget {
             )
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.check),
-        onPressed: () {
-          onChoiceSelected(name); // استخدام الCallback Function عند الاختيار
-          Navigator.pop(context);
-        },
       ),
     );
   }

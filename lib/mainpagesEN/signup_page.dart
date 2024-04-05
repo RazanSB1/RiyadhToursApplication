@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -111,34 +113,62 @@ class _SignUpPageState extends State<SignUpPage> {
                     width: double.infinity,
                     child: GestureDetector(
                       onTap: () async {
-                        try {
-                          await FirebaseAuth.instance
-                              .createUserWithEmailAndPassword(
-                            email: _emailController.text.trim(),
-                            password: _passwordController.text.trim(),
-                          );
-
-                          // الحصول على معلومات المستخدم بعد التسجيل
-                          User? user = FirebaseAuth.instance.currentUser;
-
-                          // تخزين معلومات إضافية للمستخدم في Firestore
-                          await FirebaseFirestore.instance
-                              .collection('users')
-                              .doc(user?.uid)
-                              .set({
-                            'username': _usernameController.text.trim(),
-                            'email': _emailController.text.trim(),
-                            'password': _passwordController.text.trim(),
-                            'type': 'user',
-                          });
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const HomePage(),
+                        // التحقق من طول كلمة المرور
+                        if (_passwordController.text.trim().length < 6) {
+                          // عرض رسالة تنبيه للمستخدم
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text(
+                                  'The password must be at least 6 characters long'),
+                              backgroundColor: Colors.red,
                             ),
                           );
-                        } catch (e) {
-                          print('حدث خطأ أثناء التسجيل: $e');
+                        } else if (!_emailController.text.trim().contains(
+                            RegExp(
+                                r'^[a-zA-Z0-9._]+@[a-zA-Z0-9]+\.[a-zA-Z]+'))) {
+                          // التحقق من صحة البريد الإلكتروني
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content:
+                                  Text('Please enter a valid email address.'),
+                              backgroundColor: Colors.red,
+                            ),
+                          );
+                        } else {
+                          try {
+                            await FirebaseAuth.instance
+                                .createUserWithEmailAndPassword(
+                              email: _emailController.text.trim(),
+                              password: _passwordController.text.trim(),
+                            );
+
+                            User? user = FirebaseAuth.instance.currentUser;
+
+                            await FirebaseFirestore.instance
+                                .collection('users')
+                                .doc(user?.uid)
+                                .set({
+                              'username': _usernameController.text.trim(),
+                              'email': _emailController.text.trim(),
+                              'password': _passwordController.text.trim(),
+                              'type': 'user',
+                            });
+
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const HomePage(),
+                              ),
+                            );
+                          } catch (e) {
+                            // عرض رسالة خطأ في حالة فشل التسجيل
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text('حدث خطأ أثناء التسجيل: $e'),
+                                backgroundColor: Colors.red,
+                              ),
+                            );
+                          }
                         }
                       },
                       child: Container(

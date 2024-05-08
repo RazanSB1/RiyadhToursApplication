@@ -1,0 +1,4 @@
+#Wed May 01 15:29:31 AST 2024
+base.0=/Users/elvaroot/Downloads/RiytouAppProject-main/build/app/intermediates/dex/release/minifyReleaseWithR8/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
